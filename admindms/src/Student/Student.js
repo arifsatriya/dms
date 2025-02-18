@@ -20,7 +20,7 @@ useEffect(() => {
   async function  Load()
   {
      const result = await axios.get(
-         "http://localhost:9002/api/student/");
+         "http://localhost:8085/api/student/");
          setUsers(result.data.data);
          console.log(result.data);
   }
@@ -31,7 +31,7 @@ useEffect(() => {
         event.preventDefault();
     try
         {
-         await axios.post("http://localhost:9002/api/student/add",
+         await axios.post("http://localhost:8085/api/student/add",
         {
         
           stname: stname,
@@ -65,7 +65,7 @@ useEffect(() => {
    async function DeleteStudent(id)
    {
        
-        await axios.delete("http://localhost:9002/api/student/delete/" + id); 
+        await axios.delete("http://localhost:8085/api/student/delete/" + id); 
         alert("Student deleted Successfully");
         Load();
    
@@ -80,7 +80,7 @@ useEffect(() => {
    try
        {
         
-        await axios.put("http://localhost:9002/api/student/update/"+ students.find(u => u.id === id).id || id,
+        await axios.put("http://localhost:8085/api/student/update/"+ students.find(u => u.id === id).id || id,
        {
          id: id,
          stname: stname,
