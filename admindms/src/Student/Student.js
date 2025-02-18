@@ -6,7 +6,7 @@ function Student()
   const [id, setId] = useState('');
   const [stname, setName] = useState("");
   const [course, setCourse] = useState("");
-  const [fee, setFee] = useState("");
+  const [payment, setpayment] = useState("");
 
 
   const [students, setUsers] = useState([]);
@@ -36,7 +36,7 @@ useEffect(() => {
         
           stname: stname,
           course: course,
-          fee: fee
+          payment: payment
         
         });
           alert("Student Registation Successfully");
@@ -54,7 +54,7 @@ useEffect(() => {
    {
     setName(students.stname);
     setCourse(students.course);
-    setFee(students.fee); 
+    setpayment(students.payment); 
  
     setId(students.id);
     
@@ -85,7 +85,7 @@ useEffect(() => {
          id: id,
          stname: stname,
          course: course,
-         fee: fee
+         payment: payment
        
        });
          alert("Registation Updateddddd");
@@ -135,12 +135,12 @@ useEffect(() => {
               </div>
 
               <div class="form-group">
-                <label>Fee</label>
-                <input type="text" class="form-control" id="fee" 
-                  value={fee}
+                <label>payment</label>
+                <input type="text" class="form-control" id="payment" 
+                  value={payment}
                 onChange={(event) =>
                   {
-                    setFee(event.target.value);      
+                    setpayment(event.target.value);      
                   }}
                 />
               </div>
@@ -158,7 +158,7 @@ useEffect(() => {
       <th scope="col">Student Id</th>
       <th scope="col">Student Name</th>
       <th scope="col">Course</th>
-      <th scope="col">Fee</th>
+      <th scope="col">payment</th>
       
       <th scope="col">Option</th>
     </tr>
@@ -171,7 +171,7 @@ useEffect(() => {
                 <th scope="row">{student.id} </th>
                 <td>{student.stname}</td>
                 <td>{student.course}</td>
-                <td>{student.fee}</td>        
+                <td>{student.payment}</td>        
                 <td>
                     <button type="button" class="btn btn-warning"  onClick={() => editStudent(student)} >Edit</button>  
                     <button type="button" class="btn btn-danger" onClick={() => DeleteStudent(student.id)}>Delete</button>
